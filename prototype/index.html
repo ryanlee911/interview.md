@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="같은 공연, 필요한 순간만 함께. 공연 전후의 메이트와 나에게 맞는 귀가 방법을 찾는 after 프로토타입.">
+  <title>after — 공연의 앞뒤를 함께</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="brand" aria-label="after 홈"><img src="./assets/mark.svg" width="29" height="29" alt=""><span>after<span class="brand-dot">.</span></span></a>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <a href="#home" data-page="home">둘러보기</a><a href="#mates" data-page="mates">메이트 찾기</a><a href="#journey" data-page="journey">귀가 플랜</a>
+      </nav>
+      <div class="header-actions"><a href="#saved" class="saved-link" data-page="saved"><i data-icon="bookmark"></i><span>보관함</span><b id="saved-count" hidden>0</b></a><button class="profile-button" id="profile-button" aria-label="내 체험 프로필">나</button></div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="page-home" class="page">
+      <div class="intro-line"><span><img src="./assets/mark.svg" width="19" height="19" alt=""> 공연의 앞뒤를 함께</span><span class="preview-label">INTERACTIVE PROTOTYPE</span></div>
+      <section class="event-hero" aria-label="선택한 공연">
+        <div class="hero-art"><div class="hero-overlay"></div><div class="hero-copy"><p class="overline">GOOD COMPANY. GOOD WAY HOME.</p><h1>같은 공연,<br>필요한 순간만 <span>함께.</span></h1><p class="hero-sub">밥 한 끼부터 집으로 가는 길까지.<br>내 페이스에 맞는 동행을 만나보세요.</p><a class="hero-cta" href="#mates">내 순간의 메이트 찾기 <i data-icon="arrow-up-right"></i></a></div><div class="hero-caption"><span>FOR THE MOMENTS<br>BEFORE & AFTER</span><span class="hero-coordinate">37.5469° N<br>126.6660° E</span></div></div>
+        <div class="event-ticket"><div class="ticket-top"><span class="overline">MY NEXT LIVE</span><button class="text-button" id="change-event">공연 변경 <i data-icon="chevron-down"></i></button></div><div class="ticket-main"><span class="ticket-label">CONCERT</span><h2 id="hero-event-title"></h2><p id="hero-event-venue"></p><div class="ticket-date"><strong id="hero-event-day"></strong><div id="hero-event-date"></div></div></div><div class="ticket-divider"><span></span></div><div class="ticket-bottom"><div><span>이 공연에서 만나는 우리</span><b id="hero-mate-count"></b></div><div class="mini-avatars" aria-hidden="true"><span>유</span><span>소</span><span>모</span></div></div><p class="ticket-demo">공연 일정·인원은 체험용 예시입니다.</p></div>
+      </section>
+      <div class="home-shortcuts"><a href="#mates"><span class="shortcut-icon"><i data-icon="users"></i></span><div><b>잠깐 함께해도 좋아요</b><span>밥 · MD · 사진 · 귀가 메이트</span></div><i data-icon="arrow-right"></i></a><a href="#journey"><span class="shortcut-icon"><i data-icon="route"></i></span><div><b>끝나고, 어떻게 가세요?</b><span>귀가 방법 비교하고 같은 방향 찾기</span></div><i data-icon="arrow-right"></i></a></div>
+      <section class="section-block"><div class="section-heading"><div><p class="section-kicker">FIND YOUR MOMENT</p><h2>이 순간, 같이 할까요?</h2></div><a href="#mates" class="text-link">모든 메이트 보기 <i data-icon="arrow-up-right"></i></a></div><div class="purpose-tabs" id="home-purposes" aria-label="동행 목적"></div><div class="mate-grid home-mates" id="home-mates"></div></section>
+      <section class="home-journey"><div class="home-journey-copy"><p class="section-kicker">THE WAY BACK</p><h2>앵콜이 끝나도<br>집에 가는 길은 남으니까.</h2><p>셔틀부터 택시까지 한눈에 비교하고,<br>같은 방향으로 가는 메이트도 찾아보세요.</p></div><div class="home-journey-form"><label for="home-destination">어느 동네로 돌아가세요?</label><div class="destination-input"><i data-icon="map-pin"></i><select id="home-destination" aria-label="귀가 지역"></select></div><button id="home-plan" class="button primary">내 귀가 플랜 보기 <i data-icon="arrow-right"></i></button><div class="popular"><span>많이 찾는 방향</span><button data-home-destination="gangnam">강남</button><button data-home-destination="hongdae">홍대</button><button data-home-destination="suwon">수원</button></div></div></section>
+      <div class="small-promise"><i data-icon="spark"></i><p>하루 종일 함께하지 않아도 괜찮아요. <b>우리에게 필요한 순간만, after.</b></p></div>
+    </section>
+
+    <section id="page-mates" class="page" hidden>
+      <div class="page-heading"><div><p class="section-kicker">FIND YOUR MOMENT</p><h1>어떤 순간을 함께할까요?</h1><p>같은 공연, 같은 목적. 딱 맞는 만큼만 함께해요.</p></div><button class="button dark" id="open-create"><i data-icon="plus"></i> 메이트 모집하기</button></div>
+      <button class="event-context" id="mates-event"><span class="live-dot"></span><b id="mates-event-label"></b><span>공연 변경</span><i data-icon="chevron-down"></i></button>
+      <div class="mates-layout"><aside class="filter-panel"><div class="filter-heading"><h2>내게 맞는 조건</h2><button class="text-button" id="reset-filters">초기화</button></div><label for="filter-date">공연 날짜</label><select id="filter-date"></select><label for="filter-time">함께할 시간</label><select id="filter-time"><option value="all">전체 시간</option><option value="before">공연 전</option><option value="after">공연 후</option></select><label for="filter-destination">이동 방향</label><select id="filter-destination"></select><label for="filter-age">연령대</label><select id="filter-age"><option value="all">모든 연령대</option><option value="20">20대</option><option value="30">30대</option></select><div class="filter-note"><i data-icon="info"></i><p>동행은 서로의 페이스를 존중하는 것부터 시작해요.</p></div></aside><div class="mates-results"><div class="purpose-tabs" id="mate-purposes" aria-label="동행 목적"></div><div class="results-toolbar"><span id="result-count" role="status"></span><label class="sort-label">정렬 <select id="sort-mates"><option value="recommended">추천순</option><option value="latest">최근 등록순</option></select></label></div><div class="mate-grid" id="all-mates"></div></div></div>
+    </section>
+
+    <section id="page-journey" class="page" hidden>
+      <div class="page-heading"><div><p class="section-kicker">THE WAY BACK</p><h1>좋은 하루의 마지막까지.</h1><p>내게 맞는 귀가 방법을 고르고, 같은 방향의 메이트를 만나요.</p></div><span class="page-stamp"><i data-icon="route"></i> TAKE THE GOOD WAY HOME</span></div>
+      <div class="journey-search"><button class="journey-event" id="journey-event"><span class="field-label">출발하는 공연</span><b id="journey-event-label"></b><span id="journey-venue"></span></button><span class="journey-arrow"><i data-icon="arrow-right"></i></span><div class="journey-destination"><label for="journey-destination">돌아갈 동네</label><select id="journey-destination"></select></div><button class="button primary" id="search-journey">귀가 방법 찾기 <i data-icon="arrow-right"></i></button></div>
+      <div class="journey-timing"><i data-icon="clock"></i><span>공연 종료 <b>22:10</b> · 퇴장 여유 <b>35분</b>을 기준으로 비교해요.</span><span class="sample-pill">시간·요금은 예시</span></div>
+      <div class="journey-content"><section class="route-section"><div class="section-heading"><h2 id="route-heading"></h2><span class="muted small">인원에 따라 달라지는 선택</span></div><div id="route-cards"></div><div class="transport-notice"><i data-icon="info"></i><p>실제 시간표·실시간 교통·막차 여부를 조회하는 서비스가 아닙니다. 실제 이용 전 운행사 및 교통 앱에서 반드시 확인해 주세요.</p></div></section><aside class="direction-panel"><p class="section-kicker">SAME WAY, GOOD COMPANY</p><h2>가는 방향이 같다면.</h2><p id="direction-description"></p><div id="direction-mates"></div><button id="direction-find" class="button outline">같은 방향 메이트 더 보기 <i data-icon="arrow-right"></i></button><div class="meeting-note"><i data-icon="map-pin"></i><span>첫 만남은 밝고 사람이 많은 곳에서.<br>약속 장소를 구체적으로 정해요.</span></div></aside></div>
+    </section>
+
+    <section id="page-saved" class="page" hidden><div class="page-heading"><div><p class="section-kicker">KEEP THE GOOD ONES</p><h1>나의 보관함</h1><p>마음에 둔 동행과 돌아갈 길, 한곳에 모아두세요.</p></div></div><div class="saved-tabs" id="saved-tabs"><button class="active" data-saved-tab="mates">저장한 메이트</button><button data-saved-tab="requests">연결 요청</button><button data-saved-tab="routes">귀가 플랜</button><button data-saved-tab="posts">내 모집글</button></div><div id="saved-content"></div></section>
+  </main>
+  <footer><div class="footer-top"><a href="#home" class="brand">after<span class="brand-dot">.</span></a><span>좋아하는 마음이 모이는, 공연의 앞뒤.</span><button class="text-button" id="about-button">프로토타입 안내 <i data-icon="arrow-up-right"></i></button></div><div class="footer-bottom"><span>© 2026 after. A little company goes a long way.</span><span>공연·프로필·교통은 가상 예시이며 실제 연결·예약은 이루어지지 않습니다.</span></div></footer>
+  <div id="toast" class="toast" role="status" hidden><i data-icon="check"></i><span></span></div>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button class="dialog-close icon-button" id="close-dialog" aria-label="창 닫기"><i data-icon="x"></i></button><div id="dialog-content"></div></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
